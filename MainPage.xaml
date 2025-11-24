@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab03.MainPage"
+             Title="JSON Dispatcher">
+
+    <Grid RowDefinitions="Auto, Auto, *, Auto" Padding="10" RowSpacing="10">
+
+        <HorizontalStackLayout Grid.Row="0" Spacing="10">
+            <Button Text="Відкрити JSON" Clicked="LoadBtn_Clicked"/>
+            <Button Text="Зберегти JSON" Clicked="SaveBtn_Clicked"/>
+            <Button Text="Про програму" Clicked="AboutBtn_Clicked" BackgroundColor="#512BD4"/>
+        </HorizontalStackLayout>
+
+        <Grid Grid.Row="1" ColumnDefinitions="*, *, *" ColumnSpacing="5">
+            <Entry x:Name="FilterName" Placeholder="Пошук (ПІБ)" TextChanged="OnFilterChanged"/>
+            <Entry x:Name="FilterFaculty" Grid.Column="1" Placeholder="Факультет" TextChanged="OnFilterChanged"/>
+            <Entry x:Name="FilterCourse" Grid.Column="2" Placeholder="Курс" TextChanged="OnFilterChanged"/>
+        </Grid>
+
+        <Grid Grid.Row="2" RowDefinitions="30, *">
+            <Grid Grid.Row="0" ColumnDefinitions="2*, 2*, 1*, 2*" BackgroundColor="LightGray">
+                <Label Text="ПІБ" FontAttributes="Bold" VerticalOptions="Center" Padding="5,0"/>
+                <Label Grid.Column="1" Text="Факультет" FontAttributes="Bold" VerticalOptions="Center"/>
+                <Label Grid.Column="2" Text="Курс" FontAttributes="Bold" VerticalOptions="Center"/>
+                <Label Grid.Column="3" Text="Адреса" FontAttributes="Bold" VerticalOptions="Center"/>
+            </Grid>
+
+            <CollectionView Grid.Row="1" x:Name="StudentsList" SelectionMode="Single">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid ColumnDefinitions="2*, 2*, 1*, 2*" Padding="5">
+                            <Label Text="{Binding FullName}" LineBreakMode="TailTruncation"/>
+                            <Label Grid.Column="1" Text="{Binding Faculty}" />
+                            <Label Grid.Column="2" Text="{Binding Course}" HorizontalOptions="Center"/>
+                            <Label Grid.Column="3" Text="{Binding City}" LineBreakMode="TailTruncation"/>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </Grid>
+
+        <HorizontalStackLayout Grid.Row="3" Spacing="10" HorizontalOptions="Center">
+            <Button Text="Додати" Clicked="AddBtn_Clicked" BackgroundColor="Green"/>
+            <Button Text="Редагувати" Clicked="EditBtn_Clicked" BackgroundColor="Orange"/>
+            <Button Text="Видалити" Clicked="DeleteBtn_Clicked" BackgroundColor="Red"/>
+        </HorizontalStackLayout>
+    </Grid>
+</ContentPage>

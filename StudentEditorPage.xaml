@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Lab03.StudentEditorPage"
+             Title="Редагування студента">
+    <ScrollView>
+        <VerticalStackLayout Spacing="10" Padding="20">
+            <Entry x:Name="EntLastName" Placeholder="Прізвище" />
+            <Entry x:Name="EntFirstName" Placeholder="Ім'я" />
+            <Entry x:Name="EntPatronymic" Placeholder="По-батькові" />
+            <Entry x:Name="EntFaculty" Placeholder="Факультет" />
+            <Entry x:Name="EntDepartment" Placeholder="Кафедра" />
+            <Entry x:Name="EntCourse" Placeholder="Курс" Keyboard="Numeric" />
+            <Entry x:Name="EntCity" Placeholder="Місто/Адреса" />
+
+            <HorizontalStackLayout Spacing="10">
+                <CheckBox x:Name="ChkScholarship" />
+                <Label Text="Має стипендію" VerticalOptions="Center"/>
+            </HorizontalStackLayout>
+
+            <Button Text="Зберегти" Clicked="Save_Clicked" BackgroundColor="Green" TextColor="White"/>
+            <Button Text="Скасувати" Clicked="Cancel_Clicked" BackgroundColor="Gray" TextColor="White"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
