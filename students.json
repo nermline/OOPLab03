@@ -1,0 +1,91 @@
+{
+  "Residents": [
+    {
+      "status": "Проживає",
+      "room": "903/2",
+      "scholarship": false,
+      "name": {
+        "last": "Москалюк",
+        "first": "Ілля",
+        "patronymic": "Сергійович"
+      },
+      "faculty": {
+        "name": "Комп'ютерних наук та кібернетики",
+        "specialty": "Комп'ютерні науки"
+      },
+      "chair": null,
+      "course": 2,
+      "residence": {
+        "address": "вул. Зої Бутенко, 6",
+        "fromDate": "01-09-2024",
+        "toDate": "30-06-2025"
+      }
+    },
+
+    {
+      "status": "Проживає",
+      "room": "201/3",
+      "scholarship": true,
+      "name": {
+        "last": "Дробязко",
+        "first": "Олександр",
+        "patronymic": "Олександрович"
+      },
+      "faculty": {
+        "name": "Комп'ютерних наук та кібернетики",
+        "specialty": "Системний аналіз"
+      },
+      "chair": "Кафедра Системного аналізу та теорії прийняття рішень",
+      "course": 3,
+      "residence": {
+        "address": "вул. Зої Бутенко, 6",
+        "fromDate": "01-09-2023",
+        "toDate": "30-06-2025"
+      }
+    },
+
+    {
+      "status": "Очікує",
+      "room": null,
+      "scholarship": false,
+      "name": {
+        "last": "Іванов",
+        "first": "Іван",
+        "patronymic": "Іванович"
+      },
+      "faculty": {
+        "name": "Інформаційних техноголій",
+        "specialty": "Кібербезпека"
+      },
+      "chair": "Кафедра кібербезпеки та захисту інформації",
+      "course": 4,
+      "residence": {
+        "address": "вул. Юлії Здановської, 55",
+        "fromDate": null,
+        "toDate": null
+      }
+    },
+
+    {
+      "status": "Виселено",
+      "room": "228/2",
+      "scholarship": false,
+      "name": {
+        "last": "Землерійка",
+        "first": "Анастасія",
+        "patronymic": "Корнеплідівна"
+      },
+      "faculty": {
+        "name": "Біології",
+        "specialty": "Стоматологія"
+      },
+      "chair": "Кафедра чистих і цілих зубів",
+      "course": 6,
+      "residence": {
+        "address": "вул. Київська, 25",
+        "fromDate": "01-09-2018",
+        "toDate": "30-06-2024"
+      }
+    }
+  ]
+}
