@@ -5,13 +5,26 @@
              Title="Редагування студента">
     <ScrollView>
         <VerticalStackLayout Spacing="10" Padding="20">
+            <Picker x:Name="StatusPicker"
+                    TextColor="White"
+                    FontSize="14"
+                    HeightRequest="40">
+                <Picker.Items>
+                    <x:String>— Оберіть статус —</x:String>
+                    <x:String>Проживає</x:String>
+                    <x:String>Очікує</x:String>
+                    <x:String>Виселено</x:String>
+                </Picker.Items>
+            </Picker>
+            <Entry x:Name="EntRoom" Placeholder="Кімната" />
             <Entry x:Name="EntLastName" Placeholder="Прізвище" />
             <Entry x:Name="EntFirstName" Placeholder="Ім'я" />
             <Entry x:Name="EntPatronymic" Placeholder="По-батькові" />
             <Entry x:Name="EntFaculty" Placeholder="Факультет" />
-            <Entry x:Name="EntDepartment" Placeholder="Кафедра" />
-            <Entry x:Name="EntCourse" Placeholder="Курс" Keyboard="Numeric" />
-            <Entry x:Name="EntCity" Placeholder="Місто/Адреса" />
+            <Entry x:Name="EntSpecialty" Placeholder="Спеціальність" />
+            <Entry x:Name="EntChair" Placeholder="Кафедра" />
+            <Entry x:Name="EntCourse" Placeholder="Курс" />
+            <Entry x:Name="EntAddress" Placeholder="Адреса" />
 
             <HorizontalStackLayout Spacing="10">
                 <CheckBox x:Name="ChkScholarship" />

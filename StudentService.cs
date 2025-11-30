@@ -1,18 +1,25 @@
-﻿using System.Text.Json;
+﻿using System.Collections.ObjectModel;
+using System.Text.Json;
 
 namespace Lab03
 {
     public class StudentService
     {
         private string _currentFilePath = string.Empty;
-        public List<Student> Students { get; set; } = new List<Student>();
+        public ObservableCollection<Student> Students { get; set; } = new ObservableCollection<Student>();
 
+        private readonly JsonSerializerOptions _options = new JsonSerializerOptions
+        {
+            PropertyNameCaseInsensitive = true,
+            WriteIndented = true,
+            Encoder = System.Text.Encodings.Web.JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+        };
         public async Task SaveToFileAsync(string filePath)
         {
             _currentFilePath = filePath;
 
             using var stream = File.Create(filePath);
-            await JsonSerializer.SerializeAsync(stream, Students);
+            await JsonSerializer.SerializeAsync(stream, Students, _options);
         }
 
         public async Task LoadFromFileAsync(string filePath)
@@ -21,16 +28,13 @@ namespace Lab03
 
             _currentFilePath = filePath;
             using var stream = File.OpenRead(filePath);
-            var list = await JsonSerializer.DeserializeAsync<List<Student>>(stream);
+            var list = await JsonSerializer.DeserializeAsync<List<Student>>(stream, _options);
 
             Students.Clear();
 
             if (list != null)
             {
-                foreach (var student in list)
-                {
-                    Students.Add(student);
-                }
+                foreach (var item in list) Students.Add(item);
             }
         }
 
@@ -38,7 +42,12 @@ namespace Lab03
 
         public void UpdateStudent(Student selected, Student updatedStudent)
         {
-            selected = updatedStudent;
+            var index = Students.IndexOf(selected);
+
+            if (index != -1)
+            {
+                Students[index] = updatedStudent;
+            }
         }
 
         public void DeleteStudent(Student student)
@@ -56,9 +65,10 @@ namespace Lab03
             if (!string.IsNullOrWhiteSpace(faculty))
                 query = query.Where(s => s.Faculty.Contains(faculty, StringComparison.OrdinalIgnoreCase));
 
-            int filterCourse = int.Parse(course);
-            if (filterCourse > 0)
+            if (int.TryParse(course, out int filterCourse) && filterCourse > 0)
+            {
                 query = query.Where(s => s.Course == filterCourse);
+            }
 
             return query.ToList();
         }

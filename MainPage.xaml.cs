@@ -18,7 +18,6 @@
             {
                 var customJson = new FilePickerFileType(new Dictionary<DevicePlatform, IEnumerable<string>> {
                     { DevicePlatform.WinUI, new[] { ".json" } },
-                    { DevicePlatform.Android, new[] { "application/json" } },
                 });
 
                 var result = await FilePicker.PickAsync(new PickOptions { FileTypes = customJson, PickerTitle = "Оберіть JSON" });
@@ -42,7 +41,7 @@
                 savePicker.FileTypeChoices.Add("JSON File", new List<string>() { ".json" });
                 savePicker.SuggestedFileName = "students";
 
-                var window = (Application.Current.Windows.FirstOrDefault()?.Handler?.PlatformView as Microsoft.UI.Xaml.Window);
+                var window = (Application.Current?.Windows.FirstOrDefault()?.Handler?.PlatformView as Microsoft.UI.Xaml.Window);
                 if (window == null) throw new Exception("Не вдалося отримати вікно програми.");
 
                 var hWnd = WinRT.Interop.WindowNative.GetWindowHandle(window);
@@ -85,7 +84,7 @@
                 var editor = new StudentEditorPage(selected);
                 editor.OnStudentSaved += (updatedStudent) =>
                 {
-                    _service.UpdateStudent(updatedStudent);
+                    _service.UpdateStudent(selected, updatedStudent);
                     ApplyFilters();
                 };
                 await Navigation.PushAsync(editor);

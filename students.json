@@ -1,91 +1,57 @@
-{
-  "Residents": [
+[
     {
-      "status": "Проживає",
-      "room": "903/2",
-      "scholarship": false,
-      "name": {
-        "last": "Москалюк",
-        "first": "Ілля",
-        "patronymic": "Сергійович"
-      },
-      "faculty": {
-        "name": "Комп'ютерних наук та кібернетики",
-        "specialty": "Комп'ютерні науки"
-      },
-      "chair": null,
-      "course": 2,
-      "residence": {
-        "address": "вул. Зої Бутенко, 6",
-        "fromDate": "01-09-2024",
-        "toDate": "30-06-2025"
-      }
+      "Status": "Проживає",
+      "Room": "903/2",
+      "HasScholarship": false,
+      "LastName": "Москалюк",
+      "FirstName": "Ілля",
+      "Patronymic": "Сергійович",
+      "Faculty": "Комп'ютерних наук та кібернетики",
+      "Specialty": "Комп'ютерні науки",
+      "Chair": null,
+      "Course": 2,
+      "Address": "вул. Зої Бутенко, 6"
     },
 
     {
-      "status": "Проживає",
-      "room": "201/3",
-      "scholarship": true,
-      "name": {
-        "last": "Дробязко",
-        "first": "Олександр",
-        "patronymic": "Олександрович"
-      },
-      "faculty": {
-        "name": "Комп'ютерних наук та кібернетики",
-        "specialty": "Системний аналіз"
-      },
-      "chair": "Кафедра Системного аналізу та теорії прийняття рішень",
-      "course": 3,
-      "residence": {
-        "address": "вул. Зої Бутенко, 6",
-        "fromDate": "01-09-2023",
-        "toDate": "30-06-2025"
-      }
+      "Status": "Проживає",
+      "Room": "201/3",
+      "HasScholarship": true,
+      "LastName": "Дробязко",
+      "FirstName": "Олександр",
+      "Patronymic": "Олександрович",
+      "Faculty": "Комп'ютерних наук та кібернетики",
+      "Specialty": "Системний аналіз",
+      "Chair": "Кафедра Системного аналізу та теорії прийняття рішень",
+      "Course": 3,
+      "Address": "вул. Зої Бутенко, 6"
     },
 
     {
-      "status": "Очікує",
-      "room": null,
-      "scholarship": false,
-      "name": {
-        "last": "Іванов",
-        "first": "Іван",
-        "patronymic": "Іванович"
-      },
-      "faculty": {
-        "name": "Інформаційних техноголій",
-        "specialty": "Кібербезпека"
-      },
-      "chair": "Кафедра кібербезпеки та захисту інформації",
-      "course": 4,
-      "residence": {
-        "address": "вул. Юлії Здановської, 55",
-        "fromDate": null,
-        "toDate": null
-      }
+      "Status": "Очікує",
+      "Room": null,
+      "HasScholarship": false,
+      "LastName": "Іванов",
+      "FirstName": "Іван",
+      "Patronymic": "Іванович",
+      "Faculty": "Інформаційних техноголій",
+      "Specialty": "Кібербезпека",
+      "Chair": "Кафедра кібербезпеки та захисту інформації",
+      "Course": 4,
+      "Address": "вул. Юлії Здановської, 55"
     },
 
     {
-      "status": "Виселено",
-      "room": "228/2",
-      "scholarship": false,
-      "name": {
-        "last": "Землерійка",
-        "first": "Анастасія",
-        "patronymic": "Корнеплідівна"
-      },
-      "faculty": {
-        "name": "Біології",
-        "specialty": "Стоматологія"
-      },
-      "chair": "Кафедра чистих і цілих зубів",
-      "course": 6,
-      "residence": {
-        "address": "вул. Київська, 25",
-        "fromDate": "01-09-2018",
-        "toDate": "30-06-2024"
-      }
+      "Status": "Виселено",
+      "Room": "228/2",
+      "HasScholarship": false,
+      "LastName": "Землерійка",
+      "FirstName": "Анастасія",
+      "Patronymic": "Корнеплідівна",
+      "Faculty": "Біології",
+      "Specialty": "Стоматологія",
+      "Chair": "Кафедра чистих і цілих зубів",
+      "Course": 6,
+      "Address": "вул. Київська, 25"
     }
-  ]
-}
+]
