@@ -56,7 +56,7 @@
                 _student.Patronymic = EntPatronymic.Text ?? string.Empty;
                 _student.Faculty = EntFaculty.Text ?? string.Empty;
                 _student.Specialty = EntSpecialty.Text ?? string.Empty;
-                _student.Chair = EntChair.Text ?? string.Empty;
+                _student.Chair = EntChair.Text ?? null;
                 _student.Room = EntRoom.Text;
                 _student.Address = EntAddress.Text ?? string.Empty;
 
